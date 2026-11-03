@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import{ model, Schema } from "mongoose";
 
 export interface IOrderItem {
     sku: string,
@@ -27,6 +27,7 @@ const orderItemSchema = new Schema<IOrderItem>({
     name: {
         type: String,
         required: true,
+        trim: true,
     },
     quantity: {
         type: Number,
@@ -42,7 +43,7 @@ const orderItemSchema = new Schema<IOrderItem>({
     _id: false
 })
 
-const orderSchema = new mongoose.Schema<IOrder>({
+const orderSchema = new Schema<IOrder>({
     orderId: {
         type: String,
         required: true,
@@ -83,6 +84,6 @@ const orderSchema = new mongoose.Schema<IOrder>({
     timestamps: true
 });
 
-const orderModel = mongoose.model<IOrder>("orders", orderSchema);
+const orderModel = model<IOrder>("orders", orderSchema);
 
 export default orderModel;
