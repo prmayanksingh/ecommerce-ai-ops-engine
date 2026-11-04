@@ -84,6 +84,6 @@ const orderSchema = new Schema<IOrder>({
     timestamps: true
 });
 
-const orderModel = model<IOrder>("orders", orderSchema);
+const orderModel = model<IOrder>("Orders", orderSchema);
 
 export default orderModel;

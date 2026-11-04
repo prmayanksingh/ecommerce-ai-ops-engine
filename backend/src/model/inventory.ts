@@ -44,6 +44,6 @@ const inventorySchema = new Schema<IInventory>({
     timestamps: true
 });
 
-const inventoryModel = model<IInventory>("inventory", inventorySchema);
+const inventoryModel = model<IInventory>("Inventory", inventorySchema);
 
 export default inventoryModel;
